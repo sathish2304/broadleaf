@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - mvn install
+      - echo "******** Uploading to S3 ********"
+      - aws s3 sync . s3://cmp-pipeline-test/build_test --exclude '*' --include '*.war'
