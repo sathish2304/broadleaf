@@ -9,7 +9,7 @@ resources:
           boot: true
           deviceName: boot
           initializeParams: 
-            sourceImage: "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20180611"
+            sourceImage: "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20180716"
           type: PERSISTENT
       machineType: zones/us-central1-a/machineTypes/n1-standard-1
       serviceAccounts:
