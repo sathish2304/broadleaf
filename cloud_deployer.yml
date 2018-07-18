@@ -1,0 +1,27 @@
+resources: 
+  - 
+    name: gcloud-deployer
+    type: compute.v1.instance
+    properties: 
+      disks: 
+        - 
+          autoDelete: true
+          boot: true
+          deviceName: boot
+          initializeParams: 
+            sourceImage: "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20180611"
+          type: PERSISTENT
+      machineType: zones/us-central1-a/machineTypes/n1-standard-1
+      serviceAccounts:
+        - email: 1079399974466-compute@developer.gserviceaccount.com
+          scopes:
+            - https://www.googleapis.com/auth/cloud-platform            
+      networkInterfaces:
+        - network: https://www.googleapis.com/compute/v1/projects/cloud-migration-solution/global/networks/cloud-migration-network
+          subnetwork: https://www.googleapis.com/compute/v1/projects/cloud-migration-solution/regions/us-central1/subnetworks/public-subnet1
+          accessConfigs:
+           - name: External NAT 
+             type: ONE_TO_ONE_NAT            
+      zone: us-central1-a
+      
+    
